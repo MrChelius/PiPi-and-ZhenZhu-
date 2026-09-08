@@ -1,1188 +1,955 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PiPi & ZhenZhu — A Little World of Fluff</title>
-
-<meta name="description"
-content="Welcome to the colorful world of PiPi & ZhenZhu — two beloved cats, their photos, adventures, games and fluffy memories.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PiPi & ZhenZhu — A Fluffy Story</title>
+<meta name="description" content="The colorful world of PiPi & ZhenZhu — photos, memories and little adventures.">
 
 <style>
-
 :root{
---pink:#ff5fa2;
---pink2:#ff91bd;
---yellow:#ffd85a;
---blue:#75d8ff;
---mint:#8de8cf;
---purple:#a78bfa;
---cream:#fff9ed;
---dark:#30243e;
---white:#ffffff;
+  --ink:#21182d;
+  --pink:#ff5b9f;
+  --yellow:#ffd85c;
+  --blue:#8edfff;
+  --mint:#91e5cc;
+  --lav:#b7a3ff;
+  --cream:#fff9ef;
+  --line:#eadfea;
 }
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
+*{box-sizing:border-box}
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
-font-family:
--apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-Arial,
-sans-serif;
-
-color:var(--dark);
-
-background:
-radial-gradient(circle at 10% 10%,#ffe2f0 0,transparent 25%),
-radial-gradient(circle at 90% 25%,#d8f7ff 0,transparent 28%),
-linear-gradient(180deg,#fff7fb,#f3fbff,#fff9ee);
-
-overflow-x:hidden;
+  margin:0;
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 5% 10%,#ffe0ee 0 12%,transparent 28%),
+    radial-gradient(circle at 95% 25%,#d9f7ff 0 13%,transparent 30%),
+    radial-gradient(circle at 50% 75%,#fff1b9 0 10%,transparent 27%),
+    var(--cream);
+  overflow-x:hidden;
 }
 
-a{
-color:inherit;
-text-decoration:none;
+a{text-decoration:none;color:inherit}
+
+img{display:block}
+
+button{font:inherit}
+
+/* NAV */
+
+.site-nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.9);
 }
 
-/* =========================
-NAVIGATION
-========================= */
-
-header{
-position:sticky;
-top:0;
-z-index:100;
-
-background:rgba(255,255,255,.88);
-backdrop-filter:blur(15px);
-
-border-bottom:2px solid white;
-}
-
-nav{
-max-width:1200px;
-margin:auto;
-
-padding:13px 20px;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
+.nav-inner{
+  max-width:1240px;
+  margin:auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .logo{
-font-size:1.25rem;
-font-weight:950;
+  font-size:1.2rem;
+  font-weight:950;
+  letter-spacing:-.03em;
 }
 
-.logo span{
-color:var(--pink);
+.logo span{color:var(--pink)}
+
+.nav-links{
+  display:flex;
+  gap:5px;
 }
 
-.menu{
-display:flex;
-gap:8px;
+.nav-links a{
+  padding:9px 13px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:.9rem;
 }
 
-.menu a{
-font-weight:800;
-padding:9px 14px;
-border-radius:999px;
-transition:.2s;
+.nav-links a:hover{
+  background:#fff0f7;
 }
 
-.menu a:hover{
-background:#fff0f7;
-transform:translateY(-2px);
-}
-
-/* =========================
-GENERAL
-========================= */
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:0 20px;
-}
+/* COMMON */
 
 .section{
-padding:90px 20px;
-max-width:1200px;
-margin:auto;
+  max-width:1240px;
+  margin:auto;
+  padding:105px 24px;
 }
 
-.title{
-text-align:center;
-font-size:clamp(2.4rem,5vw,4rem);
-font-weight:950;
-margin-bottom:12px;
+.kicker{
+  color:#7759d9;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:.76rem;
+  font-weight:950;
 }
 
-.subtitle{
-text-align:center;
-max-width:760px;
-margin:0 auto 45px;
-font-size:1.08rem;
-line-height:1.8;
+.section-heading{
+  max-width:750px;
+  margin-bottom:48px;
 }
 
-.btn{
-display:inline-block;
-
-padding:14px 20px;
-
-border-radius:18px;
-
-font-weight:900;
-
-box-shadow:0 7px 0 rgba(48,36,62,.1);
-
-transition:.2s;
+.section-heading h2{
+  margin:8px 0 15px;
+  font-size:clamp(2.8rem,6vw,5.2rem);
+  line-height:.92;
+  letter-spacing:-.055em;
 }
 
-.btn:hover{
-transform:translateY(-4px);
+.section-heading p{
+  max-width:650px;
+  line-height:1.8;
+  color:#64586c;
 }
 
-.pink{
-background:var(--pink);
-color:white;
+/* BUTTONS */
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:14px 19px;
+  border-radius:16px;
+  font-weight:900;
+  transition:.2s;
+  box-shadow:0 7px 0 rgba(33,24,45,.1);
 }
 
-.yellow{
-background:var(--yellow);
+.button:hover{
+  transform:translateY(-4px);
+  box-shadow:0 11px 0 rgba(33,24,45,.08);
 }
 
-.white{
-background:white;
+.button-pink{
+  background:var(--pink);
+  color:white;
 }
 
-/* =========================
-HERO
-========================= */
+.button-yellow{
+  background:var(--yellow);
+}
+
+/* HERO */
 
 .hero{
-max-width:1200px;
-margin:auto;
-
-padding:65px 20px 40px;
-
-display:grid;
-grid-template-columns:1fr 1.15fr;
-gap:45px;
-align-items:center;
+  max-width:1240px;
+  min-height:760px;
+  margin:auto;
+  padding:80px 24px 50px;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:50px;
+  align-items:center;
 }
 
-.hero-text{
-position:relative;
-z-index:5;
+.hero-copy{
+  position:relative;
+  z-index:10;
 }
 
-.eyebrow{
-color:#7857df;
-
-font-size:.85rem;
-
-font-weight:950;
-
-letter-spacing:.12em;
-
-text-transform:uppercase;
-
-margin-bottom:14px;
+.hero-copy h1{
+  margin:15px 0 25px;
+  font-size:clamp(4rem,8vw,8rem);
+  line-height:.82;
+  letter-spacing:-.075em;
 }
 
-.hero h1{
-font-size:clamp(3.6rem,7vw,7rem);
-
-line-height:.87;
-
-font-weight:1000;
-
-margin-bottom:25px;
+.hero-copy h1 span{
+  color:var(--pink);
 }
 
-.hero h1 span{
-color:var(--pink);
+.hero-copy p{
+  max-width:590px;
+  margin-bottom:28px;
+  color:#5e5367;
+  font-size:1.12rem;
+  line-height:1.8;
 }
 
-.hero p{
-font-size:1.15rem;
-line-height:1.8;
-max-width:650px;
-margin-bottom:25px;
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
 }
 
-/* =========================
-HERO PHOTO COLLAGE
-========================= */
+/* HERO COLLAGE */
 
-.hero-collage{
-height:520px;
-position:relative;
+.hero-art{
+  position:relative;
+  height:650px;
 }
 
-.photo-card{
-position:absolute;
-
-background:white;
-
-padding:9px;
-
-border-radius:24px;
-
-box-shadow:
-0 25px 60px rgba(57,30,80,.18);
-
-transition:.3s;
-
-overflow:hidden;
+.hero-photo{
+  position:absolute;
+  padding:9px;
+  background:white;
+  border-radius:27px;
+  box-shadow:0 30px 70px rgba(46,26,62,.18);
+  transition:.35s;
 }
 
-.photo-card img{
-display:block;
-
-width:100%;
-height:100%;
-
-object-fit:cover;
-
-border-radius:17px;
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:19px;
 }
 
-.photo-card:hover{
-transform:scale(1.05) rotate(0deg)!important;
-z-index:10;
+.hero-photo:hover{
+  transform:rotate(0) scale(1.045)!important;
+  z-index:20;
 }
 
-.hero-photo1{
-width:280px;
-height:350px;
-
-left:10px;
-top:50px;
-
-transform:rotate(-7deg);
-z-index:3;
+.hero-a{
+  width:330px;
+  height:430px;
+  left:3%;
+  top:80px;
+  transform:rotate(-6deg);
+  z-index:4;
 }
 
-.hero-photo2{
-width:260px;
-height:300px;
-
-right:5px;
-top:5px;
-
-transform:rotate(7deg);
-z-index:2;
+.hero-b{
+  width:275px;
+  height:350px;
+  right:1%;
+  top:10px;
+  transform:rotate(7deg);
+  z-index:3;
 }
 
-.hero-photo3{
-width:250px;
-height:290px;
-
-right:70px;
-bottom:10px;
-
-transform:rotate(-5deg);
-z-index:4;
+.hero-c{
+  width:255px;
+  height:310px;
+  right:9%;
+  bottom:0;
+  transform:rotate(-5deg);
+  z-index:6;
 }
 
-.hero-photo4{
-width:190px;
-height:210px;
-
-left:180px;
-bottom:0;
-
-transform:rotate(9deg);
-z-index:5;
+.hero-d{
+  width:195px;
+  height:235px;
+  left:26%;
+  bottom:5px;
+  transform:rotate(8deg);
+  z-index:7;
 }
 
-/* decorative blobs */
-
-.blob{
-position:absolute;
-
-border-radius:50%;
-
-z-index:0;
+.sticker{
+  position:absolute;
+  z-index:15;
+  padding:12px 16px;
+  background:var(--yellow);
+  border-radius:18px;
+  font-weight:950;
+  box-shadow:0 12px 25px rgba(46,26,62,.12);
+  transform:rotate(-8deg);
 }
 
-.blob-yellow{
-width:110px;
-height:110px;
-
-background:var(--yellow);
-
-right:20px;
-bottom:60px;
+.sticker-one{
+  left:0;
+  top:28px;
 }
 
-.blob-pink{
-width:80px;
-height:80px;
-
-background:#ffb9d7;
-
-left:30px;
-top:0;
+.sticker-two{
+  right:4%;
+  bottom:110px;
+  background:var(--mint);
+  transform:rotate(6deg);
 }
 
-/* =========================
-CAT INTRO
-========================= */
+/* CATS */
 
-.cat-intro{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
+.cat-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
 }
 
-.cat-box{
-background:white;
-
-border-radius:32px;
-
-padding:30px;
-
-min-height:270px;
-
-box-shadow:0 20px 50px rgba(60,35,80,.1);
-
-position:relative;
-
-overflow:hidden;
+.cat-card{
+  min-height:420px;
+  position:relative;
+  overflow:hidden;
+  padding:38px;
+  border-radius:36px;
+  background:white;
+  box-shadow:0 22px 55px rgba(49,29,65,.09);
 }
 
-.cat-box:nth-child(1){
-background:linear-gradient(135deg,#fff,#ffe5f1);
+.cat-card:first-child{
+  background:linear-gradient(135deg,#fff,#ffe4f0);
 }
 
-.cat-box:nth-child(2){
-background:linear-gradient(135deg,#fff,#fff2bd);
+.cat-card:last-child{
+  background:linear-gradient(135deg,#fff,#fff0bc);
 }
 
-.cat-box .emoji{
-font-size:4.5rem;
-position:absolute;
-right:25px;
-top:20px;
+.cat-card h3{
+  margin:20px 0 12px;
+  font-size:2.7rem;
+  letter-spacing:-.05em;
 }
 
-.cat-box .name{
-display:inline-block;
-
-background:var(--mint);
-
-padding:7px 13px;
-
-border-radius:999px;
-
-font-weight:950;
-
-margin-bottom:15px;
+.cat-card p{
+  max-width:500px;
+  line-height:1.8;
+  color:#62566a;
 }
 
-.cat-box:nth-child(2) .name{
-background:var(--yellow);
+.cat-name{
+  display:inline-block;
+  padding:7px 13px;
+  border-radius:999px;
+  background:var(--mint);
+  font-weight:950;
 }
 
-.cat-box h3{
-font-size:2rem;
-margin-bottom:12px;
+.cat-card:last-child .cat-name{
+  background:var(--yellow);
 }
 
-.cat-box p{
-line-height:1.75;
-max-width:520px;
+.cat-emoji{
+  position:absolute;
+  right:30px;
+  top:22px;
+  font-size:5rem;
+  transform:rotate(8deg);
 }
 
-/* =========================
-FLOATING PHOTO STRIP
-========================= */
-
-.photo-strip{
-display:grid;
-
-grid-template-columns:
-1.3fr
-.8fr
-1fr
-.75fr
-1.2fr;
-
-gap:14px;
-
-margin-top:50px;
+.cat-decoration{
+  position:absolute;
+  right:-25px;
+  bottom:-45px;
+  font-size:10rem;
+  opacity:.08;
 }
 
-.strip-photo{
-height:220px;
-
-border-radius:25px;
-
-overflow:hidden;
-
-box-shadow:0 15px 35px rgba(50,30,70,.14);
-
-background:white;
-
-padding:7px;
-
-transform:rotate(-2deg);
-}
-
-.strip-photo:nth-child(2){
-transform:rotate(3deg);
-}
-
-.strip-photo:nth-child(3){
-transform:rotate(-4deg);
-}
-
-.strip-photo:nth-child(4){
-transform:rotate(3deg);
-}
-
-.strip-photo:nth-child(5){
-transform:rotate(-2deg);
-}
-
-.strip-photo img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:19px;
-}
-
-/* =========================
-BIG PHOTO STORY
-========================= */
+/* STORY COLLAGE */
 
 .story{
-display:grid;
-
-grid-template-columns:1.1fr .9fr;
-
-gap:35px;
-
-align-items:center;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:center;
 }
 
-.story-image{
-position:relative;
-min-height:500px;
+.story-collage{
+  height:560px;
+  position:relative;
+}
+
+.story-photo{
+  position:absolute;
+  padding:9px;
+  background:white;
+  border-radius:28px;
+  box-shadow:0 25px 55px rgba(49,29,65,.15);
+}
+
+.story-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:20px;
 }
 
 .story-main{
-position:absolute;
-
-width:72%;
-height:440px;
-
-left:5%;
-top:20px;
-
-padding:9px;
-
-background:white;
-
-border-radius:32px;
-
-box-shadow:0 25px 60px rgba(60,30,80,.18);
-
-transform:rotate(-4deg);
+  width:68%;
+  height:500px;
+  left:0;
+  top:15px;
+  transform:rotate(-4deg);
+  z-index:2;
 }
 
-.story-main img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:24px;
+.story-second{
+  width:42%;
+  height:285px;
+  right:0;
+  top:45px;
+  transform:rotate(7deg);
+  z-index:4;
 }
 
-.story-small{
-position:absolute;
-
-width:190px;
-height:230px;
-
-right:0;
-bottom:0;
-
-padding:8px;
-
-background:white;
-
-border-radius:25px;
-
-box-shadow:0 20px 45px rgba(60,30,80,.2);
-
-transform:rotate(8deg);
+.story-third{
+  width:43%;
+  height:260px;
+  right:2%;
+  bottom:0;
+  transform:rotate(-6deg);
+  z-index:5;
 }
 
-.story-small img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:18px;
+.story-copy h2{
+  font-size:clamp(3rem,5vw,5rem);
+  line-height:.9;
+  letter-spacing:-.06em;
+  margin:12px 0 25px;
 }
 
-.story-text{
-padding:20px;
+.story-copy p{
+  color:#62566a;
+  line-height:1.85;
+  font-size:1.06rem;
 }
 
-.story-text .label{
-font-weight:950;
-color:var(--pink);
-text-transform:uppercase;
-letter-spacing:.1em;
+/* MID PHOTO BAND */
+
+.photo-band{
+  display:grid;
+  grid-template-columns:1.5fr .7fr 1fr .75fr 1.35fr;
+  gap:15px;
+  align-items:center;
 }
 
-.story-text h2{
-font-size:3rem;
-line-height:1;
-margin:12px 0 20px;
+.band-photo{
+  padding:7px;
+  background:white;
+  border-radius:25px;
+  box-shadow:0 18px 38px rgba(49,29,65,.12);
 }
 
-.story-text p{
-line-height:1.8;
-font-size:1.08rem;
+.band-photo img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:18px;
 }
 
-/* =========================
-PHOTO WALL
-========================= */
+.band-photo:nth-child(1){transform:rotate(-3deg)}
+.band-photo:nth-child(2){transform:rotate(5deg)}
+.band-photo:nth-child(3){transform:rotate(-5deg)}
+.band-photo:nth-child(4){transform:rotate(4deg)}
+.band-photo:nth-child(5){transform:rotate(-2deg)}
 
-.photo-wall{
-display:grid;
+/* GALLERY */
 
-grid-template-columns:
-repeat(12,1fr);
-
-grid-auto-rows:110px;
-
-gap:14px;
+.gallery-wrap{
+  position:relative;
 }
 
-.wall{
-overflow:hidden;
-
-border-radius:22px;
-
-background:white;
-
-padding:6px;
-
-box-shadow:0 10px 30px rgba(60,30,80,.12);
-
-cursor:pointer;
-
-transition:.3s;
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:95px;
+  gap:16px;
 }
 
-.wall:hover{
-transform:scale(1.035) rotate(1deg);
-
-z-index:5;
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  padding:7px;
+  background:white;
+  border-radius:25px;
+  box-shadow:0 12px 35px rgba(49,29,65,.1);
+  cursor:pointer;
+  transition:.3s;
 }
 
-.wall img{
-width:100%;
-height:100%;
-object-fit:cover;
-
-border-radius:17px;
+.gallery-item:hover{
+  transform:scale(1.035) rotate(1deg);
+  z-index:10;
 }
 
-.w1{grid-column:span 4;grid-row:span 3}
-.w2{grid-column:span 3;grid-row:span 2}
-.w3{grid-column:span 5;grid-row:span 2}
-.w4{grid-column:span 3;grid-row:span 3}
-.w5{grid-column:span 5;grid-row:span 3}
-.w6{grid-column:span 4;grid-row:span 2}
-.w7{grid-column:span 3;grid-row:span 3}
-.w8{grid-column:span 5;grid-row:span 2}
-.w9{grid-column:span 4;grid-row:span 3}
-.w10{grid-column:span 4;grid-row:span 2}
-.w11{grid-column:span 4;grid-row:span 3}
-.w12{grid-column:span 4;grid-row:span 2}
-.w13{grid-column:span 3;grid-row:span 3}
-.w14{grid-column:span 5;grid-row:span 2}
-.w15{grid-column:span 4;grid-row:span 3}
-.w16{grid-column:span 4;grid-row:span 2}
-.w17{grid-column:span 4;grid-row:span 3}
-.w18{grid-column:span 4;grid-row:span 2}
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:18px;
+}
 
-/* =========================
-GAME
-========================= */
+/* deliberately different sizes */
+
+.g1{grid-column:span 5;grid-row:span 4}
+.g2{grid-column:span 3;grid-row:span 3}
+.g3{grid-column:span 4;grid-row:span 5}
+.g4{grid-column:span 3;grid-row:span 4}
+.g5{grid-column:span 4;grid-row:span 3}
+.g6{grid-column:span 5;grid-row:span 4}
+.g7{grid-column:span 4;grid-row:span 4}
+.g8{grid-column:span 3;grid-row:span 3}
+.g9{grid-column:span 5;grid-row:span 4}
+.g10{grid-column:span 4;grid-row:span 3}
+.g11{grid-column:span 3;grid-row:span 4}
+.g12{grid-column:span 5;grid-row:span 3}
+.g13{grid-column:span 4;grid-row:span 4}
+.g14{grid-column:span 3;grid-row:span 3}
+.g15{grid-column:span 5;grid-row:span 4}
+.g16{grid-column:span 4;grid-row:span 3}
+.g17{grid-column:span 3;grid-row:span 4}
+.g18{grid-column:span 5;grid-row:span 3}
+
+/* GAME */
+
+.game-section{
+  padding-top:70px;
+}
 
 .game{
-height:360px;
-
-position:relative;
-
-overflow:hidden;
-
-border-radius:35px;
-
-background:
-linear-gradient(
-#82dcff 0 62%,
-#baf08e 62%
-);
-
-box-shadow:0 25px 60px rgba(60,30,80,.15);
-
-border:5px solid white;
-
-cursor:pointer;
+  position:relative;
+  height:390px;
+  overflow:hidden;
+  border:6px solid white;
+  border-radius:38px;
+  background:linear-gradient(#8edfff 0 62%,#baf08d 62%);
+  box-shadow:0 28px 65px rgba(49,29,65,.14);
+  cursor:pointer;
 }
 
 .game:after{
-content:"";
-
-position:absolute;
-
-left:0;
-right:0;
-bottom:0;
-
-height:37%;
-
-background:
-repeating-linear-gradient(
-115deg,
-#8bd96c 0 15px,
-#9ce67c 15px 30px
-);
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:38%;
+  background:repeating-linear-gradient(
+    115deg,
+    #89d86b 0 14px,
+    #9be57b 14px 28px
+  );
 }
 
-.game-cloud{
-position:absolute;
-
-width:120px;
-height:38px;
-
-background:white;
-
-border-radius:999px;
-
-top:60px;
-left:30px;
-
-opacity:.8;
+.cloud{
+  position:absolute;
+  width:130px;
+  height:38px;
+  background:white;
+  border-radius:999px;
+  opacity:.75;
 }
 
-.game-cloud2{
-position:absolute;
-
-width:140px;
-height:40px;
-
-background:white;
-
-border-radius:999px;
-
-top:95px;
-right:35px;
-
-opacity:.75;
+.cloud:before{
+  content:"";
+  position:absolute;
+  width:58px;
+  height:58px;
+  left:25px;
+  top:-25px;
+  border-radius:50%;
+  background:white;
 }
 
-.game-sun{
-position:absolute;
+.cloud.one{left:7%;top:55px}
+.cloud.two{right:8%;top:100px}
 
-right:35px;
-top:20px;
-
-width:75px;
-height:75px;
-
-background:var(--yellow);
-
-border-radius:50%;
+.sun{
+  position:absolute;
+  width:78px;
+  height:78px;
+  right:5%;
+  top:20px;
+  border-radius:50%;
+  background:var(--yellow);
 }
 
-.game-title{
-position:absolute;
-
-left:18px;
-top:16px;
-
-background:#ffffffdf;
-
-padding:8px 14px;
-
-border-radius:999px;
-
-font-weight:950;
-
-z-index:10;
-}
-
+.game-label,
 .game-score{
-position:absolute;
-
-right:18px;
-top:16px;
-
-background:#ffffffdf;
-
-padding:8px 14px;
-
-border-radius:999px;
-
-font-weight:950;
-
-z-index:10;
+  position:absolute;
+  top:18px;
+  z-index:20;
+  padding:9px 15px;
+  border-radius:999px;
+  background:#ffffffdf;
+  font-weight:950;
 }
 
-.game-cat{
-position:absolute;
+.game-label{left:18px}
+.game-score{right:18px}
 
-left:12%;
-
-bottom:23%;
-
-font-size:4.5rem;
-
-z-index:8;
-
-animation:run .25s infinite;
+.player{
+  position:absolute;
+  left:12%;
+  bottom:23%;
+  z-index:10;
+  font-size:5rem;
+  filter:drop-shadow(0 8px 3px rgba(0,0,0,.1));
+  animation:catbounce .25s infinite;
 }
 
-@keyframes run{
-50%{transform:translateY(-5px) rotate(-2deg)}
+@keyframes catbounce{
+  50%{transform:translateY(-5px)}
 }
 
-.game-ball{
-position:absolute;
-
-left:36%;
-
-bottom:25%;
-
-font-size:2.5rem;
-
-z-index:7;
-
-animation:ball 2s ease-in-out infinite;
-}
-
-@keyframes ball{
-50%{transform:translateX(90px) rotate(180deg)}
-}
-
-.obstacle{
-position:absolute;
-
-right:-80px;
-
-bottom:22%;
-
-font-size:3.2rem;
-
-z-index:8;
-}
-
-.jump{
-animation:jump .6s ease-out!important;
+.player.jump{
+  animation:jump .62s ease-out!important;
 }
 
 @keyframes jump{
-50%{bottom:50%}
-100%{bottom:23%}
+  0%{bottom:23%}
+  50%{bottom:54%}
+  100%{bottom:23%}
 }
 
-.game-tip{
-position:absolute;
-
-bottom:14px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-background:#ffffffdd;
-
-padding:7px 13px;
-
-border-radius:999px;
-
-font-weight:800;
-
-font-size:.8rem;
-
-z-index:15;
-
-white-space:nowrap;
+.ball{
+  position:absolute;
+  left:35%;
+  bottom:25%;
+  z-index:9;
+  font-size:2.6rem;
+  animation:ballmove 2.2s ease-in-out infinite;
 }
 
-/* =========================
-SUPPORT
-========================= */
+@keyframes ballmove{
+  50%{transform:translateX(85px) rotate(180deg)}
+}
+
+.cactus{
+  position:absolute;
+  right:-80px;
+  bottom:23%;
+  z-index:10;
+  font-size:3.5rem;
+}
+
+.game-message{
+  position:absolute;
+  left:50%;
+  bottom:16px;
+  transform:translateX(-50%);
+  z-index:20;
+  background:#ffffffdf;
+  padding:8px 15px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+/* SUPPORT */
 
 .support{
-padding:60px 25px;
-
-text-align:center;
-
-border-radius:40px;
-
-background:
-linear-gradient(
-135deg,
-#fff0a5,
-#ffd1e7
-);
-
-box-shadow:0 25px 60px rgba(60,30,80,.12);
+  padding:70px 30px;
+  border-radius:42px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 20% 30%,#fff8bd 0 12%,transparent 30%),
+    linear-gradient(135deg,#ffe1ee,#fff0a7);
+  box-shadow:0 28px 65px rgba(49,29,65,.12);
 }
 
-.support .emoji{
-font-size:5rem;
+.support-icon{
+  font-size:5rem;
 }
 
 .support h2{
-font-size:3rem;
-margin:5px 0 15px;
+  margin:5px 0 15px;
+  font-size:clamp(2.5rem,5vw,4rem);
+  letter-spacing:-.05em;
 }
 
 .support p{
-max-width:720px;
-
-margin:0 auto 25px;
-
-line-height:1.8;
+  max-width:720px;
+  margin:0 auto 28px;
+  line-height:1.8;
+  color:#5e5367;
 }
 
-/* =========================
-LIGHTBOX
-========================= */
+/* LIGHTBOX */
 
 .lightbox{
-position:fixed;
-
-inset:0;
-
-background:rgba(28,18,38,.9);
-
-z-index:1000;
-
-display:none;
-
-align-items:center;
-
-justify-content:center;
-
-padding:25px;
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  background:rgba(26,18,34,.92);
 }
 
-.lightbox.show{
-display:flex;
+.lightbox.open{
+  display:flex;
 }
 
 .lightbox img{
-max-width:94vw;
-max-height:88vh;
-
-border-radius:25px;
-
-box-shadow:0 25px 80px #0008;
+  max-width:94vw;
+  max-height:90vh;
+  border-radius:25px;
+  box-shadow:0 30px 90px #0008;
 }
 
 .close{
-position:absolute;
-
-top:20px;
-right:25px;
-
-width:50px;
-height:50px;
-
-border:0;
-
-border-radius:50%;
-
-background:white;
-
-font-size:2rem;
-
-cursor:pointer;
+  position:absolute;
+  top:20px;
+  right:25px;
+  width:52px;
+  height:52px;
+  border:0;
+  border-radius:50%;
+  background:white;
+  color:var(--ink);
+  font-size:2rem;
+  cursor:pointer;
 }
 
-/* =========================
-FOOTER
-========================= */
+/* FOOTER */
 
 footer{
-text-align:center;
-
-padding:45px 20px;
-
-font-weight:800;
+  padding:55px 20px;
+  text-align:center;
+  font-weight:850;
 }
 
-/* =========================
-MOBILE
-========================= */
+/* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
-.hero{
-grid-template-columns:1fr;
-}
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:55px;
+  }
 
-.hero-collage{
-height:430px;
-}
+  .hero-art{
+    height:530px;
+  }
 
-.cat-intro{
-grid-template-columns:1fr;
-}
+  .cat-layout,
+  .story{
+    grid-template-columns:1fr;
+  }
 
-.story{
-grid-template-columns:1fr;
-}
+  .photo-band{
+    grid-template-columns:repeat(3,1fr);
+  }
 
-.photo-strip{
-grid-template-columns:repeat(3,1fr);
-}
-
-.photo-strip .strip-photo:nth-child(n+4){
-display:none;
-}
-
-.photo-wall{
-grid-template-columns:repeat(6,1fr);
-grid-auto-rows:90px;
-}
-
-.w1,.w3,.w5,.w8,.w9,.w14{
-grid-column:span 3;
-}
-
-.w2,.w4,.w6,.w7,.w10,.w11,.w12,.w13,.w15,.w16,.w17,.w18{
-grid-column:span 2;
-}
+  .band-photo:nth-child(n+4){
+    display:none;
+  }
 
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
 
-.menu{
-display:none;
-}
+  .nav-links{
+    display:none;
+  }
 
-.hero{
-padding-top:40px;
-}
+  .section{
+    padding:70px 16px;
+  }
 
-.hero h1{
-font-size:3.8rem;
-}
+  .hero{
+    padding:45px 16px 20px;
+  }
 
-.hero-collage{
-height:380px;
-}
+  .hero-copy h1{
+    font-size:4.1rem;
+  }
 
-.hero-photo1{
-width:210px;
-height:270px;
-}
+  .hero-art{
+    height:400px;
+  }
 
-.hero-photo2{
-width:190px;
-height:230px;
-}
+  .hero-a{
+    width:205px;
+    height:275px;
+    left:0;
+    top:45px;
+  }
 
-.hero-photo3{
-width:180px;
-height:220px;
-right:15px;
-}
+  .hero-b{
+    width:175px;
+    height:225px;
+    right:0;
+    top:0;
+  }
 
-.hero-photo4{
-width:140px;
-height:160px;
-left:120px;
-}
+  .hero-c{
+    width:175px;
+    height:220px;
+    right:5%;
+    bottom:0;
+  }
 
-.photo-strip{
-grid-template-columns:1fr 1fr;
-}
+  .hero-d{
+    width:135px;
+    height:165px;
+    left:28%;
+    bottom:0;
+  }
 
-.strip-photo{
-height:180px;
-}
+  .sticker{
+    font-size:.8rem;
+  }
 
-.photo-wall{
-grid-template-columns:repeat(2,1fr);
-grid-auto-rows:150px;
-}
+  .cat-card{
+    min-height:350px;
+    padding:28px;
+  }
 
-.wall,
-.w1,.w2,.w3,.w4,.w5,.w6,.w7,.w8,.w9,
-.w10,.w11,.w12,.w13,.w14,.w15,.w16,.w17,.w18{
-grid-column:span 1;
-grid-row:span 1;
-}
+  .cat-card h3{
+    font-size:2.2rem;
+  }
 
-.story-image{
-min-height:420px;
-}
+  .story-collage{
+    height:420px;
+  }
 
-.story-main{
-height:360px;
-}
+  .story-main{
+    height:370px;
+  }
 
-.story-small{
-width:150px;
-height:190px;
-}
+  .story-second{
+    height:205px;
+  }
 
-.story-text h2{
-font-size:2.4rem;
-}
+  .story-third{
+    height:190px;
+  }
 
-.game{
-height:300px;
-}
+  .photo-band{
+    grid-template-columns:1fr 1fr;
+  }
 
-.game-cat{
-font-size:3.6rem;
-}
+  .band-photo:nth-child(n+5){
+    display:none;
+  }
 
-.game-tip{
-font-size:.7rem;
-}
+  .band-photo img{
+    height:180px;
+  }
 
-.support h2{
-font-size:2.3rem;
-}
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:155px;
+    gap:10px;
+  }
+
+  .gallery-item,
+  .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8,.g9,
+  .g10,.g11,.g12,.g13,.g14,.g15,.g16,.g17,.g18{
+    grid-column:span 1;
+    grid-row:span 1;
+  }
+
+  .game{
+    height:310px;
+  }
+
+  .player{
+    font-size:3.8rem;
+  }
+
+  .game-message{
+    font-size:.68rem;
+  }
 
 }
 
 </style>
 </head>
 
-
 <body>
 
-<header>
+<!-- NAV -->
 
-<nav>
+<header class="site-nav">
 
-<a href="#home" class="logo">
+<div class="nav-inner">
+
+<a class="logo" href="#top">
 🐾 <span>PiPi</span> & ZhenZhu
 </a>
 
-<div class="menu">
-<a href="#cats">Our Cats</a>
-<a href="#moments">Moments</a>
-<a href="#gallery">Gallery</a>
-<a href="#game">🎮 Game</a>
-<a href="#support">❤️ Support</a>
-</div>
-
+<nav class="nav-links">
+<a href="#cats">Cats</a>
+<a href="#story">Story</a>
+<a href="#gallery">Photos</a>
+<a href="#game-section">Game</a>
+<a href="#support">Support</a>
 </nav>
+
+</div>
 
 </header>
 
 
-<main id="home">
+<main id="top">
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero">
 
-<div class="hero-text">
+<div class="hero-copy">
 
-<div class="eyebrow">
-Welcome to their little universe ✨
+<div class="kicker">
+A tiny universe of fluff ✦
 </div>
 
 <h1>
-Meet the<br>
-<span>Fluffies.</span>
+PiPi<br>
+<span>& ZhenZhu.</span>
 </h1>
 
 <p>
 Welcome to the little world of PiPi & ZhenZhu —
-a bright and playful corner of the internet dedicated
-to two beloved cats.
+a colorful digital scrapbook filled with photographs,
+quiet moments, funny adventures and plenty of paws.
 
-Here you can discover their photos, enjoy their funny
-moments, play a tiny game and simply spend a few happy
-minutes in their fluffy world.
+Take a look around. There is always another fluffy
+memory hiding somewhere.
 </p>
 
-<a class="btn pink" href="#gallery">
-Explore their photos 📸
+<div class="hero-buttons">
+
+<a class="button button-pink" href="#gallery">
+Explore the photos →
 </a>
 
-<a class="btn yellow" href="#game">
+<a class="button button-yellow" href="#game-section">
 Play Cat Run 🎮
 </a>
 
 </div>
 
-
-<!-- HERO COLLAGE -->
-
-<div class="hero-collage">
-
-<div class="blob blob-yellow"></div>
-<div class="blob blob-pink"></div>
-
-
-<div class="photo-card hero-photo1">
-
-<img src="DSC09421%20Small.jpeg"
-alt="PiPi and ZhenZhu">
-
 </div>
 
 
-<div class="photo-card hero-photo2">
+<div class="hero-art">
 
-<img src="DSC09433%20Small.jpeg"
-alt="PiPi and ZhenZhu">
+<div class="sticker sticker-one">
+✨ fluffy memories
+</div>
 
+<div class="sticker sticker-two">
+🐾 two little legends
 </div>
 
 
-<div class="photo-card hero-photo3">
-
-<img src="IMG_7099%20Small.jpeg"
-alt="PiPi and ZhenZhu">
-
+<div class="hero-photo hero-a">
+<img src="DSC09421%20Small.jpeg" alt="PiPi and ZhenZhu">
 </div>
 
+<div class="hero-photo hero-b">
+<img src="DSC09433%20Small.jpeg" alt="PiPi and ZhenZhu">
+</div>
 
-<div class="photo-card hero-photo4">
+<div class="hero-photo hero-c">
+<img src="IMG_7099%20Small.jpeg" alt="PiPi and ZhenZhu">
+</div>
 
-<img src="IMG_7161%20Small.jpeg"
-alt="PiPi and ZhenZhu">
-
+<div class="hero-photo hero-d">
+<img src="IMG_7161%20Small.jpeg" alt="PiPi and ZhenZhu">
 </div>
 
 </div>
@@ -1191,163 +958,128 @@ alt="PiPi and ZhenZhu">
 
 
 
-<!-- ================= CATS ================= -->
+<!-- CATS -->
 
 <section class="section" id="cats">
 
-<h2 class="title">
-The stars of the show 🌟
-</h2>
+<div class="section-heading">
 
-<p class="subtitle">
-Two fluffy personalities, endless memories,
-and a whole lot of paws.
-</p>
-
-
-<div class="cat-intro">
-
-
-<div class="cat-box">
-
-<div class="emoji">
-🐱💖
-</div>
-
-<div class="name">
-PiPi
-</div>
-
-<h3>
-One half of the fluffy duo
-</h3>
-
-<p>
-Meet PiPi — one of the two stars of this little world.
-This space can grow with PiPi's favorite things,
-funniest habits and most memorable adventures.
-</p>
-
-</div>
-
-
-<div class="cat-box">
-
-<div class="emoji">
-🐈✨
-</div>
-
-<div class="name">
-ZhenZhu
-</div>
-
-<h3>
-The other half of the adventure
-</h3>
-
-<p>
-Meet ZhenZhu — an important part of every fluffy story.
-Add favorite memories, funny moments and little
-details about ZhenZhu here whenever you like.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= PHOTO STRIP ================= -->
-
-<section class="section" id="moments">
-
-<h2 class="title">
-Little moments, big memories 💕
-</h2>
-
-<p class="subtitle">
-Sometimes the smallest moments are the ones worth remembering.
-</p>
-
-
-<div class="photo-strip">
-
-<div class="strip-photo">
-<img src="DSC09557%20Small.jpeg" alt="Cat moment">
-</div>
-
-<div class="strip-photo">
-<img src="DSC09561%20Small.jpeg" alt="Cat moment">
-</div>
-
-<div class="strip-photo">
-<img src="DSC09565%20Small.jpeg" alt="Cat moment">
-</div>
-
-<div class="strip-photo">
-<img src="DSC09568%20Small.jpeg" alt="Cat moment">
-</div>
-
-<div class="strip-photo">
-<img src="DSC09892%20Small.jpeg" alt="Cat moment">
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= STORY ================= -->
-
-<section class="section">
-
-<div class="story">
-
-<div class="story-image">
-
-<div class="story-main">
-
-<img src="IMG_7250%20Small.jpeg"
-alt="PiPi and ZhenZhu">
-
-</div>
-
-<div class="story-small">
-
-<img src="IMG_7261%20Small.jpeg"
-alt="Fluffy cat">
-
-</div>
-
-</div>
-
-
-<div class="story-text">
-
-<div class="label">
-A fluffy life ✨
+<div class="kicker">
+The main characters
 </div>
 
 <h2>
-Every photo tells a little story.
+Two cats.<br>
+One big story.
 </h2>
 
 <p>
-From quiet afternoons to completely chaotic moments,
-life with PiPi and ZhenZhu is full of small surprises.
+Every good story needs unforgettable characters.
+Meet the two fluffy stars behind this little corner
+of the internet.
+</p>
 
-This website is their colorful digital scrapbook —
-a place where favorite photographs, memories and
-future adventures can live together.
+</div>
+
+
+<div class="cat-layout">
+
+
+<article class="cat-card">
+
+<div class="cat-name">PiPi</div>
+
+<div class="cat-emoji">🐱💗</div>
+
+<h3>
+One half of the adventure.
+</h3>
+
+<p>
+PiPi is one of the two stars of this website.
+This space can grow with favorite habits,
+funny moments, favorite places and all the
+little details that make PiPi special.
+</p>
+
+<div class="cat-decoration">🐾</div>
+
+</article>
+
+
+<article class="cat-card">
+
+<div class="cat-name">ZhenZhu</div>
+
+<div class="cat-emoji">🐈✨</div>
+
+<h3>
+The other half of the story.
+</h3>
+
+<p>
+ZhenZhu is the second star of this fluffy world.
+There are plenty of photographs, memories and
+future adventures waiting to become part of the story.
+</p>
+
+<div class="cat-decoration">🐾</div>
+
+</article>
+
+</div>
+
+</section>
+
+
+
+<!-- STORY -->
+
+<section class="section" id="story">
+
+<div class="story">
+
+
+<div class="story-collage">
+
+<div class="story-photo story-main">
+<img src="IMG_7250%20Small.jpeg" alt="PiPi and ZhenZhu">
+</div>
+
+<div class="story-photo story-second">
+<img src="IMG_7261%20Small.jpeg" alt="PiPi and ZhenZhu">
+</div>
+
+<div class="story-photo story-third">
+<img src="IMG_7270%20Small.jpeg" alt="PiPi and ZhenZhu">
+</div>
+
+</div>
+
+
+<div class="story-copy">
+
+<div class="kicker">
+Life in little frames
+</div>
+
+<h2>
+The best memories are usually the unexpected ones.
+</h2>
+
+<p>
+A sleepy afternoon. A curious look. A favorite spot
+by the window. A completely ridiculous moment that
+somehow becomes a favorite photograph.
+
+This website is a place for all of those things —
+a visual collection of everyday life with PiPi and ZhenZhu.
 </p>
 
 <br>
 
-<a class="btn pink" href="#gallery">
-See the photo wall
+<a class="button button-pink" href="#gallery">
+Open the memory wall →
 </a>
 
 </div>
@@ -1358,21 +1090,45 @@ See the photo wall
 
 
 
-<!-- ================= GALLERY ================= -->
+<!-- PHOTO BAND -->
 
-<section class="section" id="gallery">
+<section class="section">
 
-<h2 class="title">
-The Fluffy Photo Wall 📸
+<div class="section-heading">
+
+<div class="kicker">
+A few more moments
+</div>
+
+<h2>
+Somewhere between<br>
+cute and chaotic.
 </h2>
 
-<p class="subtitle">
-Not just a list of photos — a little wall of memories.
-Click any picture to see it in full size.
-</p>
+</div>
 
 
-<div class="photo-wall" id="photoWall">
+<div class="photo-band">
+
+<div class="band-photo">
+<img src="DSC09557%20Small.jpeg" alt="Cat memory">
+</div>
+
+<div class="band-photo">
+<img src="DSC09561%20Small.jpeg" alt="Cat memory">
+</div>
+
+<div class="band-photo">
+<img src="DSC09565%20Small.jpeg" alt="Cat memory">
+</div>
+
+<div class="band-photo">
+<img src="DSC09568%20Small.jpeg" alt="Cat memory">
+</div>
+
+<div class="band-photo">
+<img src="DSC09892%20Small.jpeg" alt="Cat memory">
+</div>
 
 </div>
 
@@ -1380,27 +1136,67 @@ Click any picture to see it in full size.
 
 
 
-<!-- ================= GAME ================= -->
+<!-- GALLERY -->
 
-<section class="section" id="game">
+<section class="section" id="gallery">
 
-<h2 class="title">
+<div class="section-heading">
+
+<div class="kicker">
+The archive
+</div>
+
+<h2>
+A wall of<br>
+fluffy memories.
+</h2>
+
+<p>
+No boring list. No identical boxes.
+Every photograph gets a different place and size
+so the whole collection feels like a real scrapbook.
+Click a photograph to open it.
+</p>
+
+</div>
+
+
+<div class="gallery" id="galleryGrid">
+</div>
+
+</section>
+
+
+
+<!-- GAME -->
+
+<section class="section game-section" id="game-section">
+
+<div class="section-heading">
+
+<div class="kicker">
+A tiny distraction
+</div>
+
+<h2>
 Cat Run 🎮
 </h2>
 
-<p class="subtitle">
-The cat is chasing the ball! Jump over the obstacles
-and see how high you can score.
+<p>
+PiPi is chasing the ball. Jump over the cactus,
+survive as long as possible and beat your score.
 </p>
 
+</div>
 
-<div class="game" id="game">
 
-<div class="game-cloud"></div>
-<div class="game-cloud2"></div>
-<div class="game-sun"></div>
+<div class="game" id="catRun">
 
-<div class="game-title">
+<div class="cloud one"></div>
+<div class="cloud two"></div>
+<div class="sun"></div>
+
+<div class="game-label">
 🐱 CAT RUN
 </div>
 
@@ -1408,19 +1204,19 @@ and see how high you can score.
 Score: <span id="score">0</span>
 </div>
 
-<div class="game-cat" id="gameCat">
+<div class="player" id="player">
 🐱
 </div>
 
-<div class="game-ball">
+<div class="ball">
 ⚽
 </div>
 
-<div class="obstacle" id="obstacle">
+<div class="cactus" id="cactus">
 🌵
 </div>
 
-<div class="game-tip">
+<div class="game-message">
 SPACE / CLICK / TAP TO JUMP
 </div>
 
@@ -1430,29 +1226,28 @@ SPACE / CLICK / TAP TO JUMP
 
 
 
-<!-- ================= SUPPORT ================= -->
+<!-- SUPPORT -->
 
 <section class="section" id="support">
 
 <div class="support">
 
-<div class="emoji">
+<div class="support-icon">
 🐾🍲
 </div>
 
 <h2>
-Fill a bowl, make a tail wag.
+Keep the bowls full.
 </h2>
 
 <p>
 If you would like to support PiPi & ZhenZhu,
-you can help with their food and everyday care.
-
-Every little bit of kindness can make their
-fluffy world a little brighter.
+this is the place for it. Your future donation
+link can go here and help cover their food
+and everyday care.
 </p>
 
-<a href="#" class="btn pink" id="donate">
+<a class="button button-pink" href="#" id="donateButton">
 Donate for food ❤️
 </a>
 
@@ -1464,24 +1259,23 @@ Donate for food ❤️
 </main>
 
 
-
 <footer>
 
-🐾 Made with ❤️ for PiPi & ZhenZhu
+🐾 PiPi & ZhenZhu
 
 <br><br>
 
-Stay fluffy. Stay curious. ✨
+Made with love, curiosity and a suspicious amount of cat hair.
 
 </footer>
 
 
 
-<!-- ================= LIGHTBOX ================= -->
+<!-- LIGHTBOX -->
 
 <div class="lightbox" id="lightbox">
 
-<button class="close" id="close">
+<button class="close" id="closeLightbox">
 ×
 </button>
 
@@ -1493,9 +1287,9 @@ Stay fluffy. Stay curious. ✨
 
 <script>
 
-/* =========================
-ALL 18 PHOTOS
-========================= */
+/* =====================================================
+   PHOTO COLLECTION
+===================================================== */
 
 const photos = [
 
@@ -1523,44 +1317,43 @@ const photos = [
 ];
 
 
-/* =========================
-BUILD PHOTO WALL
-========================= */
+/* =====================================================
+   BUILD GALLERY
+===================================================== */
 
-const wall =
-document.getElementById("photoWall");
-
+const gallery =
+document.getElementById("galleryGrid");
 
 photos.forEach((photo,index)=>{
 
-const div =
-document.createElement("div");
+  const item =
+  document.createElement("div");
 
-div.className =
-"wall w"+(index+1);
+  item.className =
+  "gallery-item g"+(index+1);
 
-const img =
-document.createElement("img");
+  const image =
+  document.createElement("img");
 
-img.src =
-encodeURI(photo);
+  image.src =
+  encodeURI(photo);
 
-img.loading =
-"lazy";
+  image.alt =
+  "PiPi & ZhenZhu photo "+(index+1);
 
-img.alt =
-"PiPi & ZhenZhu photo "+(index+1);
+  image.loading =
+  "lazy";
 
-div.appendChild(img);
+  item.appendChild(image);
 
-wall.appendChild(div);
+  gallery.appendChild(item);
 
 });
 
 
-/* =========================
-LIGHTBOX
-========================= */
+/* =====================================================
+   LIGHTBOX
+===================================================== */
 
 const lightbox =
 document.getElementById("lightbox");
@@ -1568,170 +1361,262 @@ document.getElementById("lightbox");
 const lightboxImage =
 document.getElementById("lightboxImage");
 
+gallery.addEventListener("click",function(event){
 
-wall.addEventListener("click",function(e){
+  const image =
+  event.target.closest("img");
 
-const image =
-e.target.closest("img");
+  if(!image)return;
 
-if(!image)return;
+  lightboxImage.src =
+  image.src;
 
-lightboxImage.src =
-image.src;
-
-lightbox.classList.add("show");
+  lightbox.classList.add("open");
 
 });
 
 
-document.getElementById("close")
-.onclick=function(){
+document.getElementById("closeLightbox")
+.addEventListener("click",function(){
 
-lightbox.classList.remove("show");
+  lightbox.classList.remove("open");
 
-};
-
-
-lightbox.onclick=function(e){
-
-if(e.target===lightbox){
-
-lightbox.classList.remove("show");
-
-}
-
-};
+});
 
 
-/* =========================
-CAT RUN
-========================= */
+lightbox.addEventListener("click",function(event){
+
+  if(event.target===lightbox){
+
+    lightbox.classList.remove("open");
+
+  }
+
+});
+
+
+document.addEventListener("keydown",function(event){
+
+  if(event.key==="Escape"){
+
+    lightbox.classList.remove("open");
+
+  }
+
+});
+
+
+/* =====================================================
+   CAT RUN GAME
+===================================================== */
 
 const game =
-document.getElementById("game");
+document.getElementById("catRun");
 
-const cat =
-document.getElementById("gameCat");
+const player =
+document.getElementById("player");
 
-const obstacle =
-document.getElementById("obstacle");
+const cactus =
+document.getElementById("cactus");
 
-const scoreElement =
+const scoreDisplay =
 document.getElementById("score");
 
-let score=0;
+let cactusX =
+-12;
 
-let obstaclePosition=-10;
+let score =
+0;
 
-let playing=true;
+let gameRunning =
+true;
 
+let lastTime =
+performance.now();
+
+let jumpUntil =
+0;
+
+
+/* JUMP */
 
 function jump(){
 
-if(!playing)return;
+  if(!gameRunning){
 
-cat.classList.remove("jump");
+    restartGame();
 
-void cat.offsetWidth;
+    return;
 
-cat.classList.add("jump");
+  }
+
+  const now =
+  performance.now();
+
+  if(now < jumpUntil)return;
+
+  jumpUntil =
+  now + 600;
+
+  player.classList.remove("jump");
+
+  void player.offsetWidth;
+
+  player.classList.add("jump");
 
 }
 
+
+/* CLICK / TOUCH */
 
 game.addEventListener(
 "pointerdown",
-jump
-);
+function(event){
 
-
-document.addEventListener(
-"keydown",
-function(e){
-
-if(e.code==="Space"){
-
-e.preventDefault();
-
-jump();
-
-}
+  jump();
 
 });
 
 
-function gameLoop(){
+/* SPACE */
 
-if(playing){
+document.addEventListener(
+"keydown",
+function(event){
 
-obstaclePosition-=0.7;
+  if(event.code==="Space"){
+
+    event.preventDefault();
+
+    jump();
+
+  }
+
+});
 
 
-if(obstaclePosition<-12){
+/* RESET */
 
-obstaclePosition=100;
+function restartGame(){
 
-score++;
+  score =
+  0;
 
-scoreElement.textContent=score;
+  cactusX =
+  -12;
+
+  gameRunning =
+  true;
+
+  scoreDisplay.textContent =
+  "0";
+
+  player.style.animation =
+  "";
+
+}
+
+
+/* GAME LOOP */
+
+function updateGame(time){
+
+  const delta =
+  Math.min(
+    (time-lastTime)/16.67,
+    2
+  );
+
+  lastTime =
+  time;
+
+
+  if(gameRunning){
+
+    cactusX -=
+    .72 * delta;
+
+
+    if(cactusX < -13){
+
+      cactusX =
+      100;
+
+      score++;
+
+      scoreDisplay.textContent =
+      score;
+
+    }
+
+
+    cactus.style.right =
+    cactusX+"%";
+
+
+    const a =
+    player.getBoundingClientRect();
+
+    const b =
+    cactus.getBoundingClientRect();
+
+
+    const horizontalHit =
+    a.right > b.left + 12 &&
+    a.left < b.right - 12;
+
+    const verticalHit =
+    a.bottom > b.top + 15;
+
+
+    if(horizontalHit && verticalHit){
+
+      gameRunning =
+      false;
+
+      player.classList.remove("jump");
+
+      player.style.animation =
+      "none";
+
+      setTimeout(function(){
+
+        alert(
+          "🐾 Oops!\n\n"+
+          "The cactus caught the cat!\n\n"+
+          "Your score: "+score+
+          "\n\nClick the game to try again."
+        );
+
+      },80);
+
+    }
+
+  }
+
+
+  requestAnimationFrame(updateGame);
 
 }
 
 
-obstacle.style.right=
-obstaclePosition+"%";
+requestAnimationFrame(updateGame);
 
 
-const catRect =
-cat.getBoundingClientRect();
+/* =====================================================
+   DONATION BUTTON
+===================================================== */
 
-const obstacleRect =
-obstacle.getBoundingClientRect();
+document.getElementById("donateButton")
+.addEventListener("click",function(event){
 
+  event.preventDefault();
 
-if(
-catRect.right>obstacleRect.left+8 &&
-catRect.left<obstacleRect.right-8 &&
-catRect.bottom>obstacleRect.top+12
-){
-
-playing=false;
-
-cat.style.animation="none";
-
-setTimeout(function(){
-
-alert(
-"🐾 Oops! The cactus caught the cat!\n\nScore: "
-+score
-);
-
-},100);
-
-}
-
-}
-
-requestAnimationFrame(gameLoop);
-
-}
-
-gameLoop();
-
-
-/* =========================
-DONATION PLACEHOLDER
-========================= */
-
-document.getElementById("donate")
-.addEventListener("click",function(e){
-
-e.preventDefault();
-
-alert(
-"❤️ The donation button is ready!\n\n"+
-"Later we will connect your real payment link here."
-);
+  alert(
+    "❤️ The donation button is ready.\n\n"+
+    "When you have your real payment link, "+
+    "we can connect it here."
+  );
 
 });
 
